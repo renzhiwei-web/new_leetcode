@@ -12,11 +12,11 @@ public class MaxConsecutiveOnes {
     			while(j < nums.length && nums[j] == 1) {
     				j++;
     			}
-    			if (j != nums.length) {
-    				ans = Math.max(ans, j - i);
-				}
-    		}
-    		i++;
+    			ans = Math.max(ans, j - i);
+                i = j;
+    		}else{
+                i++;
+            }
     	}
     	return ans;
     }
