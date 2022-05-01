@@ -1,0 +1,33 @@
+package stringclass;
+
+public class StudentAttendanceRecordI {
+	// leetcode 551 simple 2022/5/1
+	// 简单模拟即可
+    public boolean checkRecord(String s) {
+    	int sumA = 0;
+    	int continueL = 0;
+    	char[] cs = s.toCharArray();
+    	for(int i = 0;i < cs.length;) {
+    		if (cs[i] == 'A') {
+				sumA++;
+				i++;
+			}
+    		else if(cs[i] == 'L') {
+    			int j = i + 1;
+    			while(j < cs.length && cs[j] == 'L') {
+    				j++;
+    			}
+    			continueL = Math.max(continueL, j - i);
+    			i = j;
+    		}else {
+    			i++;
+    		}
+    		
+    	}
+    	boolean ans = true;
+    	if (sumA >= 2 || continueL >=3) {
+			ans = false;
+		}
+    	return ans;
+    }
+}
