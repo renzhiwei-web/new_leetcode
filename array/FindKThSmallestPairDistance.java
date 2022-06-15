@@ -7,6 +7,7 @@ import java.util.Map;
 public class FindKThSmallestPairDistance {
 	// leetcode 719 hard 2022/6/15
 	// 很容易想到使用排序，然后将所有的距离对遍历出来，直接解题
+	// 但是会超出时间限制
 	public int smallestDistancePair(int[] nums, int k) {
 		Arrays.sort(nums);
 		int n = nums.length;
@@ -29,7 +30,7 @@ public class FindKThSmallestPairDistance {
 	}
 	
 	
-	
+	// 为了减少时间复杂度，使用二分法+双指针的思想
     public int smallestDistancePair1(int[] nums, int k) {
     	Arrays.sort(nums);
     	int n = nums.length;
