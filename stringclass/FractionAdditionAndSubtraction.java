@@ -1,6 +1,8 @@
 package stringclass;
 
 public class FractionAdditionAndSubtraction {
+	// leetcode 592 medium 2022/7/27
+	// 难点是辗转相除法的代码实现
 	public String fractionAddition(String expression) {
 		int len = expression.length();
 		long n1 = 0;
