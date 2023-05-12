@@ -1,6 +1,9 @@
 package math;
 
 public class ReverseSubarrayToMaximizeArrayValue {
+    // leetcode 1330 hard 2023/5/12
+    // 主要是通过枚举【i，j】，计算翻转前后的差值
+    // 可以得到差值的表达式，为了降低复杂度，对表达式中的绝对值进行分类讨论
     public int maxValueAfterReverse(int[] nums) {
         int base = 0,d = 0,n = nums.length;
         int mx = Integer.MAX_VALUE,mn = Integer.MIN_VALUE;
